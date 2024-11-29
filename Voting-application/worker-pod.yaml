@@ -1,0 +1,19 @@
+kind: Pod
+apiVersion: v1
+metadata: 
+    name: worker-app
+    labels:
+        name: worker-app
+        app: demo-voting-app
+spec:
+    containers:
+      - name: worker-app
+        image: israel9101/worker-app:v1
+      
+
+
+
+
+
+
+        

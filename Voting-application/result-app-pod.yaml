@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata: 
+    name: result-app
+    labels:
+        name: result-app
+        app: demo-voting-app
+spec:
+    containers:
+      - name: result-app
+        image: israel9101/result-app:v1
+        ports:
+          - containerPort: 80 
