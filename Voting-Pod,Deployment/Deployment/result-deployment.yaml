@@ -1,0 +1,25 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+    name: result-deployment
+    labels:
+      name:  result-deployment
+      app: demo-voting-app
+spec: 
+    selector: 
+      matchLabels:
+        name: result-app
+        app: demo-voting-app
+    replicas: 1
+    template:
+      metadata: 
+        name: result-app
+        labels:
+           name: result-app
+           app: demo-voting-app
+      spec:
+        containers:
+          - name: result-app
+            image: israel9101/result-app:v1
+            ports:
+              - containerPort: 80 

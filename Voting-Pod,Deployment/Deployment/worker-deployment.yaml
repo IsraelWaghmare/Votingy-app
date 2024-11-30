@@ -1,0 +1,23 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+    name: worker-deployment
+    labels:
+      name:  worker-deployment
+      app: demo-voting-app
+spec: 
+    selector: 
+      matchLabels:
+        name: worker-app
+        app: demo-voting-app
+    replicas: 1
+    template:
+        metadata: 
+          name: worker-app
+          labels:
+              name: worker-app
+              app: demo-voting-app
+        spec:
+          containers:
+            - name: worker-app
+              image: israel9101/worker-app:v1
